@@ -5,6 +5,14 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    rules: {
+      // Copy is ported verbatim from the design, straight quotes included.
+      "react/no-unescaped-entities": "off",
+      // Plain <img> keeps the design's CSS sizing (object-fit, aspect-ratio) exact.
+      "@next/next/no-img-element": "off",
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
